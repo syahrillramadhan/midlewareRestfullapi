@@ -94,7 +94,7 @@ class Users {
         } catch (error) {
             console.log(error);
             res.status(500).json({
-                message: 'Internal Server Error At user controller'
+                message: 'Internal Server Error'
             });
         }
     }
@@ -151,7 +151,7 @@ class Users {
             const { id } = req.params
 
             if (!id) return res.status(404).json({
-                message: 'Data user not found'
+                message: 'Data Not Found'
             });
 
             const deleteUser = await prisma.users.delete({
